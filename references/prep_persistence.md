@@ -23,7 +23,8 @@ KP_host/<scenario-name>/
 │   ├── 调查员_<name>.md
 │   └── NPC队友_<name>.md
 ├── 04_跑团记录/
-│   └── session_log.md
+│   ├── session_log.md
+│   └── transcript.md
 └── 05_规则与流程/
     └── 车卡与跑团格式.md
     └── 文风参考.md
@@ -39,10 +40,19 @@ Keep player-facing and Keeper-only materials separate. Never expose `00_守秘�
 - Create `00_守秘人资料/模组框架.md` with a spoiler-safe-for-KP framework: major locations, NPCs, timeline/day events, clue gates, handouts, night/dream triggers, hazards, and likely endings. This is a private guardrail, not a player summary.
 - Create `05_规则与流程/文风参考.md` when scenario text is available. Record compact, spoiler-safe player-facing style samples or paraphrases for opening tone, location texture, document/object framing, and NPC dialogue cadence.
 - Write strict character cards into `03_角色卡/` instead of leaving them only in chat.
+- Initialize both `04_跑团记录/session_log.md` and `04_跑团记录/transcript.md` before asking whether to start. Set the initial stop point to awaiting start confirmation; leave the narrative transcript without story entries until play begins.
 - Write current state and stop point into `04_跑团记录/session_log.md` after each meaningful scene.
 - Write local card requirements and running conventions into `05_规则与流程/车卡与跑团格式.md`.
 
 If the workspace is a Git repository, check `git status` and recent history before creating files. Do not stage or commit unless the user asks or the workspace instructions require it.
+
+## Start confirmation and opening record
+
+After all required prep files, including character cards and both logs, have been created and populated, tell the player that preparation is complete without revealing spoilers, and ask: "备团文件已准备好，现在开始游戏吗？" Wait for the player's answer before entering the opening scene. This checkpoint still applies if the player previously asked to begin immediately.
+
+If the player confirms, consult the scenario's opening text when available, then deliver the opening narration and stop at a clear point where the player can respond. Immediately append the exact opening narration and any NPC dialogue to `04_跑团记录/transcript.md`, and update `04_跑团记录/session_log.md` with the opening location, in-world time, characters present, initial state, and exact last prompt or scene beat. Complete both writes before continuing play; follow the existing Continuity rules for subsequent entries.
+
+If the player declines or has not answered, keep the stop point as awaiting start confirmation and wait without advancing the story. The start-confirmation exchange is setup metadata and does not belong in the narrative transcript.
 
 ## Build a Keeper scenario frame
 
