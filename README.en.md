@@ -1,10 +1,10 @@
-# COC KP Host
+# COC KP Host Test
 
 Chinese main README: [README.md](README.md)
 
 A Chinese Call of Cthulhu-style Keeper skill for Claude Code, Codex, and ChatGPT. It lets the model run investigative horror one-shots or longer campaigns as a Keeper: player briefing, preset investigator cards, NPC teammates, checks and dice, scenario preparation, player-facing handouts, and continuity records across sessions.
 
-![COC KP Host demo](assets/demo-screenshot.jpg)
+![COC KP Host Test demo](assets/demo-screenshot.jpg)
 
 ## What It Is For
 
@@ -43,7 +43,7 @@ The goal is not to publicly summarize the module. The goal is for the Keeper to 
 
 If a module includes player-safe images, maps, portraits, clippings, letters, symbols, or diagrams, the Keeper presents them at the exact moment the investigator encounters them.
 
-![COC KP Host handout example](assets/handout-map-preview.jpg)
+![COC KP Host Test handout example](assets/handout-map-preview.jpg)
 
 Text handouts are not exposed as mechanical labels like "Handout 1" or "Player Material 2". They are reframed as in-world objects:
 
@@ -131,10 +131,10 @@ Copy this directory into the relevant host's skills folder:
 
 ```bash
 # Claude Code
-cp -R coc-kp-host ~/.claude/skills/coc-kp-host
+cp -R coc-kp-host-test ~/.claude/skills/coc-kp-host-test
 
 # Codex
-cp -R coc-kp-host ~/.codex/skills/coc-kp-host
+cp -R coc-kp-host-test ~/.codex/skills/coc-kp-host-test
 ```
 
 After installing or updating, restart the host app so the skill can be rediscovered.
@@ -144,13 +144,13 @@ After installing or updating, restart the host app so the skill can be rediscove
 The most direct flow is to upload the scenario file, then type:
 
 ```text
-/coc-kp-host
+/coc-kp-host-test
 ```
 
 You can also trigger it with natural language, for example:
 
 ```text
-我上传了一个 COC 模组。请你用 coc-kp-host 当 KP，先私下备团，不要剧透。
+我上传了一个 COC 模组。请你用 coc-kp-host-test 当 KP，先私下备团，不要剧透。
 我想用预设调查员，带 1 个 NPC 队友；玩家看到图片或讲义时再展示给我。
 ```
 

@@ -1,5 +1,5 @@
 interface:
-  display_name: COC KP Host
+  display_name: "coc-kp-host-test"
   short_description: Hosts Chinese Call of Cthulhu-style solo/co-op sessions with
     preset investigators, NPC teammates, dice, and immersive KP narration.
   primary_color: '#3B2F2F'

@@ -1,10 +1,10 @@
-# COC KP Host
+# COC KP Host Test
 
 English version: [README.en.md](README.en.md)
 
 一个中文 Call of Cthulhu 风格跑团 KP skill，可用于 Claude Code、Codex 和 ChatGPT。它让模型像守秘人一样主持调查恐怖短团或长团：开团简报、预设调查员卡、NPC 队友、检定与投骰、模组备团、玩家可见讲义展示，以及跨会话连续性记录。
 
-![COC KP Host 效果截图](assets/demo-screenshot.jpg)
+![COC KP Host Test 效果截图](assets/demo-screenshot.jpg)
 
 ## 适合做什么
 
@@ -43,7 +43,7 @@ English version: [README.en.md](README.en.md)
 
 模组里如果有玩家可以看到的图片、地图、肖像、剪报、信件、符号或图表，KP 会在角色真正接触到它们的那一刻发出来。
 
-![COC KP Host 材料图示例](assets/handout-map-preview.jpg)
+![COC KP Host Test 材料图示例](assets/handout-map-preview.jpg)
 
 文字讲义不会被机械地叫作“Handout 1”或“玩家材料 2”，而会被转成游戏内物件：
 
@@ -131,10 +131,10 @@ python scripts/roll.py 2d6
 
 ```bash
 # Claude Code
-cp -R coc-kp-host ~/.claude/skills/coc-kp-host
+cp -R coc-kp-host-test ~/.claude/skills/coc-kp-host-test
 
 # Codex
-cp -R coc-kp-host ~/.codex/skills/coc-kp-host
+cp -R coc-kp-host-test ~/.codex/skills/coc-kp-host-test
 ```
 
 安装或更新后，重启宿主应用，让 skill 被重新发现。
@@ -144,13 +144,13 @@ cp -R coc-kp-host ~/.codex/skills/coc-kp-host
 最直接的方式是上传模组文件，然后输入：
 
 ```text
-/coc-kp-host
+/coc-kp-host-test
 ```
 
 也可以用自然语言说明你要跑这个团，例如：
 
 ```text
-我上传了一个 COC 模组。请你用 coc-kp-host 当 KP，先私下备团，不要剧透。
+我上传了一个 COC 模组。请你用 coc-kp-host-test 当 KP，先私下备团，不要剧透。
 我想用预设调查员，带 1 个 NPC 队友；玩家看到图片或讲义时再展示给我。
 ```
 

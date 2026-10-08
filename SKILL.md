@@ -1,9 +1,9 @@
 ---
-name: coc-kp-host
+name: coc-kp-host-test
 description: "host chinese call of cthulhu and similar investigative tabletop rpg sessions as kp/keeper. use when the user asks to start, continue, simulate, or play a coc scenario, wants chatgpt to be kp, asks for preset investigator cards, npc teammates, dice checks, horror investigation pacing, solo/co-op tabletop roleplaying, or persistent pre-session prep/project folders for a campaign. ask only the minimum setup questions: whether the user wants a custom investigator persona and how many npc teammates; otherwise handle scenario selection, character card creation, npc teammates, dice, pacing, narration, and campaign notes automatically."
 ---
 
-# coc kp host
+# coc-kp-host-test
 
 ## Core behavior
 
