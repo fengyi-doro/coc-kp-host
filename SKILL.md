@@ -22,7 +22,7 @@ Default setup when unspecified:
 - User character: provide one complete preset investigator card.
 - Teammates: provide one useful but non-dominating NPC teammate.
 - Dice: roll on behalf of the table and report clear results.
-- Atmosphere: treat ambient music and player-facing visuals as default tools, not extras. Run the Atmosphere loop from prep through every scene.
+- Atmosphere: treat player-facing visuals as default tools, not extras. Run the Atmosphere loop from prep through every scene.
 - Persistence: when a workspace is available and the session has a provided scenario or is likely to continue, create or update a campaign prep folder instead of relying only on chat memory.
 
 ## Table style
@@ -261,7 +261,6 @@ When the user provides a DOCX, PDF, image pack, or other scenario file, do a sho
 - Prepare important NPCs before play or before their first scene: public role, immediate want, fear/pressure, speech style, attitude toward the investigators, what they know, what they will not say, and one or two sample lines. NPC dialogue should sound like distinct people, not like interchangeable clue delivery.
 - Separate player-facing handouts, maps, portraits, diagrams, and boxed text from Keeper-only maps, stat blocks, hidden truths, room keys, future events, and GM notes.
 - Always extract the scenario's images during this pass (for PDFs use PyMuPDF/`fitz` — it renders pages and pulls embedded images with no system dependencies) into the prep folder, and build a private contact sheet/index tagging each as player-facing or Keeper-only, so the right image can be shown the instant a PC sees it. Do this even for text-heavy modules — there is almost always a cover, object, portrait, symbol, or scene illustration worth showing.
-- Always build a music cue sheet in the prep folder during this pass (scene mood -> ready-to-play URL), even when music is not a plot theme — ambient audio is a default atmosphere tool. See the Atmosphere loop section and `scripts/music.py`.
 - Preserve the scenario's canon, but do not summarize hidden truth, monster stats, final threats, or solution paths to the user.
 - During play, before running a scene tied to a scenario keyword, NPC, location, clue, or event, search the extracted scenario text for relevant terms and skim the matching passage privately. Then adapt the scene from canon rather than improvising from memory.
 - Treat this search-before-scene rule as mandatory whenever original scenario text is available. Search before answering player actions such as inspecting an object, entering a location, contacting an NPC, reading a message, sleeping, dreaming, traveling, or following up a named clue.
@@ -300,16 +299,12 @@ Only show materials that are explicitly player-facing or that the Keeper would n
 
 For uploaded DOCX/PDF scenario files, extract images when useful and keep a small contact sheet or indexed list for private reference. Use extracted images only when they match the current scene and are safe for players.
 
-## Atmosphere loop (music + visuals, every scene)
+## Atmosphere loop (visuals, every scene)
 
-Run this from prep through every scene; it is core delivery, not optional polish. If a session ends with prepared images unshown or no music ever cued, the atmosphere work was not done.
+Run this from prep through every scene; it is core delivery, not optional polish. If a session ends with prepared images unshown, the atmosphere work was not done.
 
-- Prep once: extract images and build the music cue sheet in the prep folder (see Pre-session scenario intake).
-- On the first audio cue of a session, tell the user once that music opens in their browser via `scripts/music.py` and they can say "cut"/"换"/"停" anytime; then default to using it unless they decline. A YouTube search-results URL opens reliably when a specific track cannot be verified — tell the user to hit play on a long mix.
-- Open a cue when a scene starts; switch it the moment the mood shifts (arrival/social, investigation, ritual/dread, combat/chase, climax, downtime). `scripts/music.py play <url>` switches cleanly.
-- `cut` to instant silence at every horror break — the corpse, the reveal, the burst, the death, the SAN-shattering moment. Silence is part of the scare; `resume` or switch afterward.
+- Prep once: extract images and build the image index in the prep folder (see Pre-session scenario intake).
 - Show the matching player-facing image the instant a PC sees the object/place/person it depicts.
-- If a workspace or audio is unavailable, still keep the cue sheet and hand the URLs over as clickable links.
 
 ## Narration style
 
@@ -336,7 +331,6 @@ Many investigative scenarios lean on a few recurring themes. When a provided mod
 
 - Social identity as a clue gate. Some modules make a PC's race, sex, class, religion, or nationality decide whether they can enter a place, get an answer, or how an NPC treats them. When the scenario flags this (e.g. 1920s American racism), confirm each PC's relevant identity up front, raise the comfort/intensity level with the user before play, and then apply it honestly and consistently: gate certain information, shift NPC attitudes, and let same-identity PCs reach community sources that outsiders cannot. Adjust historical bluntness to the table's stated comfort, but do not quietly erase the theme — its friction is part of the experience. Never use it for shock alone.
 - Moving parts and parallel leads. When NPCs run on independent schedules and clues sit in several locations at once, push investigators to cover ground in parallel and support splitting the party (see Table style). Track each thread's clock; some leads expire or escalate if the party lingers elsewhere.
-- Diegetic music as a plot element. Ambient scene-mood music runs by default every session (see the Atmosphere loop section); this theme is the special case where music is itself part of the story — a jazz band, a cursed record, a hymn. Name the tune playing, let it color the room, and tie plot beats to it. Exception to the cut-on-horror rule: when relentless cheerful music is itself the source of dread (e.g. a band that plays on through a murder), keep it running and `cut` only at the uncanny reveal.
 
 ## Safety and consent
 

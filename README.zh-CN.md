@@ -2,7 +2,7 @@
 
 English version: [README.en.md](README.en.md)
 
-一个中文 Call of Cthulhu 风格跑团 KP skill，可用于 Claude Code、Codex 和 ChatGPT。它让模型像守秘人一样主持调查恐怖短团或长团：开团简报、预设调查员卡、NPC 队友、检定与投骰、模组备团、玩家可见讲义展示、场景音乐，以及跨会话连续性记录。
+一个中文 Call of Cthulhu 风格跑团 KP skill，可用于 Claude Code、Codex 和 ChatGPT。它让模型像守秘人一样主持调查恐怖短团或长团：开团简报、预设调查员卡、NPC 队友、检定与投骰、模组备团、玩家可见讲义展示，以及跨会话连续性记录。
 
 ![COC KP Host 效果截图](assets/demo-screenshot.jpg)
 
@@ -12,7 +12,6 @@ English version: [README.en.md](README.en.md)
 - 上传 PDF/DOCX 模组后，让 KP 私下备团并按 canon 推进
 - 自动生成可玩的预设调查员与 NPC 队友
 - 在剧情中展示玩家真正能看到的图片、地图、剪报、信件和讲义
-- 为不同场景配上音乐，并在恐怖揭示瞬间切到静音
 - 记录线索、地点、时间、HP/SAN/幸运、NPC 态度和战报，方便下次继续
 
 ## 最新亮点
@@ -55,33 +54,7 @@ English version: [README.en.md](README.en.md)
 
 如果一张图里混有 KP 专用信息，KP 会只裁切/重制安全部分，或改用描述，不直接暴露整张图。
 
-### 4. 场景音乐控制
-
-音乐不只是装饰。这个 skill 会把配乐当成可操作的桌面工具：备团时准备不同情绪的音乐 cue，跑团时根据场景状态播放、切换、静音或恢复，让声音服务节奏，而不是绑定某一个模组。
-
-备团时会生成一张通用音乐提示表，例如：
-
-| 场景情绪 | 配乐策略 |
-| --- | --- |
-| 入场 / 社交 | 明快、热闹、有年代感 |
-| 现实调查 | 低沉、不安、可循环 |
-| 仪式 / 哀悼 | 肃穆、缓慢、带压迫感 |
-| 追逐 / 危机 | 急促、紧张、有推进感 |
-| 恐怖揭示 | 直接静音，给玩家留出停顿 |
-
-随附脚本：
-
-```bash
-python scripts/music.py play <url>     # 打开曲子并取消静音
-python scripts/music.py switch <url>   # 切换曲子，不叠音
-python scripts/music.py cut            # 瞬间静音
-python scripts/music.py resume         # 恢复声音
-python scripts/music.py stop           # 停止音乐并关闭当前音乐标签页
-```
-
-目前音乐控制主要面向 macOS。其它平台会降级为提示用户手动操作。README 不再使用单一模组风格的音乐示意图，因为这项能力更适合作为“播放 / 切换 / 静音 / 恢复”的通用工具说明。
-
-### 5. NPC 队友、全 PC 控制与分队
+### 4. NPC 队友、全 PC 控制与分队
 
 默认模式下，NPC 队友不是提示机器，也不是 KP 的传声筒，而是会犯错、有偏见、有情绪、会自己检定的调查员。他们可以提供质感和技能覆盖，但不能替玩家解谜，也不能泄露 KP 专用信息。
 
@@ -93,7 +66,7 @@ python scripts/music.py stop           # 停止音乐并关闭当前音乐标签
 
 skill 也支持分队。不同小组会有各自的地点、时间和线索，KP 在自然节点切换视角；除非角色在游戏内汇合交换情报，否则不会串线泄密。
 
-### 6. COC 7e 风格检定与速查
+### 5. COC 7e 风格检定与速查
 
 内置 `scripts/roll.py`，用于常见投骰：
 
@@ -115,7 +88,7 @@ python scripts/roll.py 2d6
 
 默认不启用花费幸运，除非玩家明确要求。
 
-### 7. 调查员卡与携带物审查
+### 6. 调查员卡与携带物审查
 
 预设调查员会包含：
 
@@ -146,10 +119,9 @@ python scripts/roll.py 2d6
 ├── references/
 │   ├── carry_audit.md         # 携带物与购买合理性审查
 │   ├── gameplay_style.md      # NPC 队友与信息流规则
-│   ├── prep_persistence.md    # 持久化备团、讲义索引、音乐索引、战报
+│   ├── prep_persistence.md    # 持久化备团、讲义索引、战报
 │   └── rules_reference.md     # COC 7e 风格规则速查
 └── scripts/
-    ├── music.py               # 场景音乐控制
     └── roll.py                # 投骰工具
 ```
 
@@ -195,7 +167,7 @@ cp -R coc-kp-host ~/.codex/skills/coc-kp-host
 - 让玩家保有行动权
 - 把失败变成后果，而不是偷偷改成成功
 - 让 NPC 队友有性格但不抢解谜权
-- 用图片和音乐服务沉浸，而不是剧透
+- 用图片服务沉浸，而不是剧透
 - 每个场景都贴着模组 canon 推进
 - 把长期团的状态记录下来，方便下次继续
 
@@ -205,7 +177,6 @@ cp -R coc-kp-host ~/.codex/skills/coc-kp-host
 - 完整模组：已端到端验证
 - PDF/DOCX 模组备团：已支持
 - 玩家可见图片/讲义：已支持
-- 场景音乐：macOS 支持，其他平台降级提示
 - COC 风格投骰：已支持
 - 持久化日志：支持状态日志与近似逐字战报
 

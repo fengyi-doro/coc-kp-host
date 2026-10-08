@@ -2,7 +2,7 @@
 
 Chinese main README: [README.md](README.md)
 
-A Chinese Call of Cthulhu-style Keeper skill for Claude Code, Codex, and ChatGPT. It lets the model run investigative horror one-shots or longer campaigns as a Keeper: player briefing, preset investigator cards, NPC teammates, checks and dice, scenario preparation, player-facing handouts, scene music, and continuity records across sessions.
+A Chinese Call of Cthulhu-style Keeper skill for Claude Code, Codex, and ChatGPT. It lets the model run investigative horror one-shots or longer campaigns as a Keeper: player briefing, preset investigator cards, NPC teammates, checks and dice, scenario preparation, player-facing handouts, and continuity records across sessions.
 
 ![COC KP Host demo](assets/demo-screenshot.jpg)
 
@@ -12,7 +12,6 @@ A Chinese Call of Cthulhu-style Keeper skill for Claude Code, Codex, and ChatGPT
 - Upload a PDF/DOCX scenario and let the Keeper prepare it privately, then run it from canon
 - Generate playable preset investigators and NPC teammates
 - Show player-facing images, maps, clippings, letters, and handouts only when characters actually encounter them
-- Score scenes with music and cut to silence at horror reveals
 - Track clues, location, time, HP/SAN/Luck, NPC attitudes, and session transcripts for later continuation
 
 ## Latest Highlights
@@ -55,33 +54,7 @@ Text handouts are not exposed as mechanical labels like "Handout 1" or "Player M
 
 If an image mixes player-facing and Keeper-only information, the Keeper crops or recreates only the safe part, or describes it instead of exposing the whole image.
 
-### 4. Scene Music Control
-
-Music is not just decoration. This skill treats soundtrack playback as an operational table tool: during prep it prepares cue links for different scene moods, and during play it can start, switch, cut, or resume audio so sound supports pacing instead of being tied to one specific module.
-
-During prep, the Keeper builds a general-purpose music cue sheet, for example:
-
-| Scene mood | Music strategy |
-| --- | --- |
-| Arrival / social | bright, lively, period-appropriate |
-| Investigation | low, uneasy, loopable |
-| Ritual / mourning | solemn, slow, oppressive |
-| Chase / crisis | urgent, tense, driving |
-| Horror reveal | hard silence, leaving a deliberate pause |
-
-Included script:
-
-```bash
-python scripts/music.py play <url>     # open a track and unmute
-python scripts/music.py switch <url>   # switch tracks without stacking audio
-python scripts/music.py cut            # instantly silence everything
-python scripts/music.py resume         # resume sound
-python scripts/music.py stop           # stop music and close the current music tab
-```
-
-Music control currently targets macOS. On other platforms it degrades gracefully by printing what the user should do manually. The README no longer uses a single module-specific music diagram, because this feature is better presented as a general play / switch / cut / resume tool.
-
-### 5. NPC Teammates, Full-PC Control, and Split Parties
+### 4. NPC Teammates, Full-PC Control, and Split Parties
 
 By default, NPC teammates are not hint machines or Keeper mouthpieces. They are investigators who can be wrong, biased, emotional, and capable of their own checks. They add texture and skill coverage, but they do not solve the mystery for the player or reveal Keeper-only information.
 
@@ -93,7 +66,7 @@ You can also switch to "player controls all PCs":
 
 The skill also supports splitting the party. Each group keeps its own location, time, and clues; the Keeper cuts between threads at natural beats, and information does not leak between groups until characters regroup and share it in-world.
 
-### 6. CoC 7e-Style Checks and Quick Reference
+### 5. CoC 7e-Style Checks and Quick Reference
 
 The included `scripts/roll.py` handles common dice rolls:
 
@@ -115,7 +88,7 @@ Supported table behavior includes:
 
 Luck spending is disabled by default unless the player explicitly asks to enable it.
 
-### 7. Investigator Cards and Carry Audit
+### 6. Investigator Cards and Carry Audit
 
 Preset investigators include:
 
@@ -146,10 +119,9 @@ When a player claims to carry a valuable, rare, restricted, illegal, or combat-r
 ├── references/
 │   ├── carry_audit.md         # carry and purchase plausibility audit
 │   ├── gameplay_style.md      # NPC teammate and information-flow rules
-│   ├── prep_persistence.md    # durable prep, handout indexes, music indexes, logs
+│   ├── prep_persistence.md    # durable prep, handout indexes, logs
 │   └── rules_reference.md     # CoC 7e-style quick reference
 └── scripts/
-    ├── music.py               # scene music control
     └── roll.py                # dice helper
 ```
 
@@ -195,7 +167,7 @@ This skill aims to be a Chinese Keeper who controls pacing, not a rules explaine
 - Preserve player agency
 - Turn failure into consequences instead of secretly converting it to success
 - Give NPC teammates personality without letting them steal the mystery
-- Use images and music for immersion, not spoilers
+- Use images for immersion, not spoilers
 - Keep each scene grounded in module canon
 - Record long-running campaign state so play can resume later
 
@@ -205,7 +177,6 @@ This skill aims to be a Chinese Keeper who controls pacing, not a rules explaine
 - Full modules: validated end to end
 - PDF/DOCX scenario prep: supported
 - Player-facing images/handouts: supported
-- Scene music: supported on macOS, graceful manual fallback elsewhere
 - CoC-style dice: supported
 - Persistent logs: supports state logs and near-verbatim narrative transcripts
 
